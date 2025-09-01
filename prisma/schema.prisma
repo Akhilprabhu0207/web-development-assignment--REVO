@@ -1,0 +1,22 @@
+// Prisma schema for SQLite database
+// Defines a School model with imagePath for the uploaded image
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model School {
+  id          Int     @id @default(autoincrement())
+  name        String
+  schoolEmail String
+  Contact     String
+  address     String
+  city        String
+  state       String
+  imagePath   String
+}
